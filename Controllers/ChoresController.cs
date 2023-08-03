@@ -41,6 +41,8 @@ public class ChoresController : ControllerBase
 
   [HttpPost]
   [Authorize]
+  // NOTE Take the data from the body, make it a Chore, and call it choreData
+  // The [FromBody] tells dotNet to take the data and cast it to a Chore
   public ActionResult<Chore> Create([FromBody] Chore choreData)
   {
     try

@@ -1,6 +1,7 @@
 using choreScore_Csharp.Enums;
 namespace choreScore_Csharp.Models;
 
+// NOTE this defines our data as its passed through the api
 public class Chore
 {
   public int Id { get; set; }

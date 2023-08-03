@@ -36,6 +36,9 @@ public class Startup
 
     services.AddScoped<ChoresRepository>();
     services.AddScoped<ChoresService>();
+    // NOTE transient will create a new service, and will dispose of it once its done. This means it could create multiple instances of same service
+    // NOTE scoped creates dependency per request, then disposes of it when request is done
+    // NOTE singleton creates dependency once every time server is started, disposes of it when server stops. We will use singleton if trying to cache user info, or when using fake db
   }
 
   private void ConfigureCors(IServiceCollection services)

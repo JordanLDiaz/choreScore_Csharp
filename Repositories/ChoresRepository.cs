@@ -9,6 +9,7 @@ public class ChoresRepository
     _db = db;
   }
 
+  // NOTE internal says you have to exist within the namespace to call this. It's a public accessor only for the project we're in. 
   internal List<Chore> Get()
   {
     string sql = @"
@@ -48,6 +49,7 @@ public class ChoresRepository
     return choreData;
   }
 
+  // NOTE void is return type for anything that returns nothing, this is different than null, which will be returned if something should have been returned, but wasn't found
   internal bool Remove(int id)
   {
     string sql = @"
